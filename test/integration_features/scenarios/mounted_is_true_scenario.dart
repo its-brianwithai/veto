@@ -8,15 +8,13 @@ import '../../models/base_view_model_implementation.dart';
 class MountedIsTrueScenario extends IntegrationScenario {
   MountedIsTrueScenario()
       : super(
-          description:
-              'Testing the mounted method initialisation of the ViewModelBuilder',
+          description: 'Testing the mounted method initialisation of the ViewModelBuilder',
           steps: [
             Given(
               'The BaseViewModel is built',
               (tester, log, box, mocks, [example, binding]) async {
                 log.info('Building the BaseViewModel..');
-                final baseViewModel =
-                    BaseViewModelImplementation(isMock: false);
+                final baseViewModel = BaseViewModelImplementation(isMock: false);
                 log.success('BaseViewModel built!');
                 box.write(#baseViewModel, baseViewModel);
               },
@@ -26,8 +24,7 @@ class MountedIsTrueScenario extends IntegrationScenario {
               (tester, log, box, mocks, [example, binding]) async {
                 await tester.pumpWidget(
                   ViewModelBuilder<BaseViewModelImplementation>(
-                    builder: (context, model, isInitialised, child) =>
-                        const SizedBox(),
+                    builder: (context, model, isInitialised, child) => const SizedBox(),
                     viewModelBuilder: () => box.read(#baseViewModel),
                   ),
                 );
@@ -37,11 +34,7 @@ class MountedIsTrueScenario extends IntegrationScenario {
             Then(
               'The BaseViewModel.isMounted method should return true',
               (tester, log, box, mocks, [example, binding]) {
-                expect(
-                    box
-                        .read<BaseViewModelImplementation>(#baseViewModel)
-                        .isMounted,
-                    true);
+                expect(box.read<BaseViewModelImplementation>(#baseViewModel).isMounted, true);
                 log.success('BaseViewModel was mounted!');
               },
             ),

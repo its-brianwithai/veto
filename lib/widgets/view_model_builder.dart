@@ -25,9 +25,7 @@ class ViewModelBuilder<T extends BaseViewModel> extends StatefulWidget {
   final Widget? child;
 
   /// Builder method that builds the widget tree.
-  final Widget Function(
-          BuildContext context, T model, bool isInitialised, Widget? child)
-      _builder;
+  final Widget Function(BuildContext context, T model, bool isInitialised, Widget? child) _builder;
 
   /// Builder method that provides the [BaseViewModel].
   final T Function() _viewModelBuilder;
@@ -48,8 +46,7 @@ class ViewModelBuilder<T extends BaseViewModel> extends StatefulWidget {
   ViewModelBuilderState<T> createState() => ViewModelBuilderState<T>();
 }
 
-class ViewModelBuilderState<T extends BaseViewModel>
-    extends State<ViewModelBuilder<T>> {
+class ViewModelBuilderState<T extends BaseViewModel> extends State<ViewModelBuilder<T>> {
   /// The current [BaseViewModel].
   late final T _viewModel;
 

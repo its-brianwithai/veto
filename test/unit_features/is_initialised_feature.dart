@@ -10,8 +10,7 @@ class IsInitialisedFeature extends UnitFeature {
           scenarios: [
             UnitScenario<BaseViewModelImplementation, UnitExample>(
               description: 'Initialising the BaseViewModel',
-              systemUnderTest: (mocks) =>
-                  BaseViewModelImplementation(isMock: true),
+              systemUnderTest: (mocks) => BaseViewModelImplementation(isMock: true),
               steps: [
                 Given(
                   'The BaseViewModel is not initialised yet',

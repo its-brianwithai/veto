@@ -7,15 +7,13 @@ import '../../models/base_view_model_implementation.dart';
 class DisposableContextIsNotNullScenario extends IntegrationScenario {
   DisposableContextIsNotNullScenario()
       : super(
-          description:
-              'Testing the context method initialisation of the ViewModelBuilder',
+          description: 'Testing the context method initialisation of the ViewModelBuilder',
           steps: [
             Given(
               'The BaseViewModel is built',
               (tester, log, box, mocks, [example, binding]) async {
                 log.info('Building the BaseViewModel..');
-                final baseViewModel =
-                    BaseViewModelImplementation(isMock: false);
+                final baseViewModel = BaseViewModelImplementation(isMock: false);
                 log.success('BaseViewModel built!');
                 box.write(#baseViewModel, baseViewModel);
               },
@@ -25,8 +23,7 @@ class DisposableContextIsNotNullScenario extends IntegrationScenario {
               (tester, log, box, mocks, [example, binding]) async {
                 await tester.pumpWidget(
                   ViewModelBuilder<BaseViewModelImplementation>(
-                    builder: (context, model, isInitialised, child) =>
-                        const SizedBox(),
+                    builder: (context, model, isInitialised, child) => const SizedBox(),
                     viewModelBuilder: () => box.read(#baseViewModel),
                   ),
                 );
@@ -37,8 +34,7 @@ class DisposableContextIsNotNullScenario extends IntegrationScenario {
               'The BaseViewModel.isDisposableContext method should return true',
               (tester, log, box, mocks, [example, binding]) {
                 box.read<BaseViewModelImplementation>(#baseViewModel).context;
-                log.success(
-                    'BaseViewModel did not throw upon requesting context!');
+                log.success('BaseViewModel did not throw upon requesting context!');
               },
             ),
           ],

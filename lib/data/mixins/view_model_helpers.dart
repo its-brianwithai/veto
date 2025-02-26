@@ -14,8 +14,7 @@ mixin ViewModelHelpers {
   ///
   /// [frameCallback] The callback function to be executed.
   void addPostFrameCallback(FrameCallback frameCallback) =>
-      _asNullable(SchedulerBinding.instance)!
-          .addPostFrameCallback(frameCallback);
+      _asNullable(SchedulerBinding.instance)!.addPostFrameCallback(frameCallback);
 
   /// Helper method to explicitly specify nullability of a variable.
   ///

@@ -33,8 +33,7 @@ class DataProviderElement<T> extends ComponentElement {
   ///
   /// Listens to [Provider] for changes if [isReactive] is `true`.
   @override
-  Widget build() =>
-      widget.build(this, Provider.of<T>(this, listen: widget.isReactive));
+  Widget build() => widget.build(this, Provider.of<T>(this, listen: widget.isReactive));
 
   /// Updates the widget.
   ///

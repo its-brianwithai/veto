@@ -51,8 +51,7 @@ mixin BusyServiceManagement {
   String? get busyMessage => _busyService.isBusyListenable.value.busyMessage;
 
   /// ValueListenable for the busy state.
-  ValueListenable<BusyModel> get isBusyListenable =>
-      _busyService.isBusyListenable;
+  ValueListenable<BusyModel> get isBusyListenable => _busyService.isBusyListenable;
 
   /// Getter for the busy state.
   bool get isBusy => _busyService.isBusy;
