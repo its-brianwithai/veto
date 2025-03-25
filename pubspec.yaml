@@ -55,18 +55,3 @@ flutter:
   #
   # For details regarding fonts in packages, see
   # https://flutter.dev/custom-fonts/#from-packages
-
-# The following section is automatically managed by toggle_dependencies.dart
-dependency_overrides:
-  informers:
-    path: ../informers
-  loglytics:
-    path: ../loglytics
-  turbo_firestore_api:
-    path: ../turbo_firestore_api
-  turbo_response:
-    path: ../turbo_response
-  veto:
-    path: 
-  shadcn_flutter:
-    path: ../../forks/shadcn_flutter
